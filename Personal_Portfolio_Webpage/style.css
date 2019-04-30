@@ -1,0 +1,116 @@
+:root {
+    --back-page: #fedeef;    
+    --back-head: #003d00e8;
+    --back-link: #f5dd53;
+    --back-sect: #dfbad1;
+    --text-page: #000e00;    
+}
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color:var(--back-page, silver);
+    color: var(--text-page, black); 
+    margin: 0;
+    padding: 0;   
+}
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: var(--back-head, grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px ;
+    color: var(--back-sect, black);
+}
+#navbar ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+#navbar li {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    list-style: none;
+}
+main a {
+    color: var(--text-page, black);
+    text-decoration: none;
+}
+#navbar a {
+    color: var(--back-sect, black);
+    text-decoration: none;
+}
+#navbar a:hover {
+    color: var(--back-link, black);
+}
+main {
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    display: flex;    
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    
+}
+#welcome-section {
+    padding-top: 40vh;
+    height: 60vh;    
+}
+h1 {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+h2 {
+    margin-bottom: 50px;
+}
+#projects {
+    min-height: 50vh;
+    padding: 20px;
+    background-color: var(--back-sect, grey);
+}
+#example {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.project-tile {
+    width: 40vw;
+    min-height: 200px;    
+}
+figure {
+    background-color: var(--back-link, silver);
+    border-radius: 30px;
+}
+figcaption {
+    padding: 10px;
+}
+#contacts {
+    min-height: 50vh;
+    padding: 20px 30% 20px 30%;
+}
+#links {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#links div {
+    background-color: var(--back-sect, white);
+    padding: 20px;
+    margin: 5px;
+    border-radius: 30px;
+}
+@media (max-width: 800px) {
+    .project-tile {
+        width: 70vw;
+    }
+}
