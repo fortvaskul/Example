@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Technical Documentation Page</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    </head>
+    <body>
+        <nav id="navbar">
+            <header>What is Java​Script?</header>
+            <ul>
+                <a class="nav-link" href="#A_high-level_definition" rel="internal">
+                    <li>A high-level definition</li>
+                </a>
+                <a class="nav-link" href="#So_what_can_it_really_do?" rel="internal">
+                    <li>So what can it really do?</li>
+                </a>
+                <a class="nav-link" href="#What_is_JavaScript_doing_on_your_page?" rel="internal">
+                    <li>What is JavaScript doing on your page?</li>
+                </a>
+                <a class="nav-link" href="#How_do_you_add_JavaScript_to_your_page?" rel="internal">
+                    <li>How do you add JavaScript to your page?</li>
+                </a>
+                <a class="nav-link" href="#Comments" rel="internal">
+                    <li>Comments</li>
+                </a>
+                <a class="nav-link" href="#Summary" rel="internal">
+                    <li>Summary</li>
+                </a>
+                <a class="nav-link" href="#Reference" rel="internal">
+                    <li>Reference</li>
+                </a>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="A_high-level_definition">
+                <header>A high-level definition</header>
+                <article>
+                    <p>JavaScript is a scripting or programming language that allows you to implement complex things on web pages — every time a web page does more than just sit there and display static information for you to look at — displaying timely content updates, interactive maps, animated 2D/3D graphics, scrolling video jukeboxes, etc. — you can bet that JavaScript is probably involved. It is the third layer of the layer cake of standard web technologies, two of which (HTML and CSS) we have covered in much more detail in other parts of the Learning Area.</p>
+                    <ul>
+                        <li>HTML is the markup language that we use to structure and give meaning to our web content, for example defining paragraphs, headings, and data tables, or embedding images and videos in the page.</li>
+                        <li>CSS is a language of style rules that we use to apply styling to our HTML content, for example setting background colors and fonts, and laying out our content in multiple columns.</li>
+                        <li>JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)</li>
+                    </ul>                                        
+                </article>
+            </section>
+            <section class="main-section" id="So_what_can_it_really_do?">
+                <header>So what can it really do?</header>
+                <article>
+                    <p>The core JavaScript language consists of some common programming features that allow you to do things like:</p>
+                    <ul>
+                        <li>Store useful values inside variables. In the above example for instance, we ask for a new name to be entered then store that name in a variable called <code>name</code>.</li>
+                        <li>Operations on pieces of text (known as "strings" in programming). In the above example we take the string "Player 1: " and join it to the <code>name</code>. variable to create the complete text label, e.g. "Player 1: Chris".</li>
+                        <li>Running code in response to certain events occurring on a web page. We used a <code>click</code> event in our example above to detect when the button is clicked and then run the code that updates the text label.</li>
+                        <li>And much more!</li>                        
+                    </ul>
+                    <p>What is even more exciting however is the functionality built on top of the core JavaScript language. So-called Application Programming Interfaces (APIs) provide you with extra superpowers to use in your JavaScript code.</p>
+                </article>
+            </section>
+            <section class="main-section" id="What_is_JavaScript_doing_on_your_page?">
+                <header>What is JavaScript doing on your page?</header>
+                <article>
+                    <p>Here we'll start actually looking at some code, and while doing so explore what actually happens when you run some JavaScript in your page.</p>
+                    <p>Let's briefly recap the story of what happens when you load a web page in a browser (first talked about in our How CSS works article). When you load a web page in your browser, you are running your code (the HTML, CSS, and JavaScript) inside an execution environment (the browser tab). This is like a factory that takes in raw materials (the code) and outputs a product (the web page).</p>
+                    <p>The JavaScript is executed by the browser's JavaScript engine, after the HTML and CSS have been assembled and put together into a web page. This ensures that the structure and style of the page are already in place by the time the JavaScript starts to run.</p>
+                    <p>This is a good thing, as a very common use of JavaScript is to dynamically modify HTML and CSS to update a user interface, via the Document Object Model API (as mentioned above). If the JavaScript loaded and tried to run before the HTML and CSS were there to affect, then errors would occur.</p>
+                </article>                
+            </section>
+            <section class="main-section" id="How_do_you_add_JavaScript_to_your_page?">
+                <header>How do you add JavaScript to your page?</header>
+                <article>
+                    <p>JavaScript is applied to your HTML page in a similar manner to CSS. Whereas CSS uses <code>link</code> elements to apply external stylesheets and <code>style</code> elements to apply internal stylesheets to HTML, JavaScript only needs one friend in the world of HTML — the <code>script</code> element. Let's learn how this works.</p>
+                    <p>External JavaScript works great, but what if we wanted to put our JavaScript in an external file? Let's explore this now.</p>
+                    <p>Create a new file in the same directory as your sample HTML file. Call it <code>script.js</code> — make sure it has that .js filename extension, as that's how it is recognized as JavaScript.</p>
+                    <p>Inside <code>script.js</code>, add the following script:</p>
+                    <div class="code"><code>
+                        function createParagraph() {<br>
+                            let para = document.createElement('p');<br>
+                            para.textContent = 'You clicked the button!';<br>
+                            document.body.appendChild(para);<br>
+                          }<br>
+                          const buttons = document.querySelectorAll('button');<br>
+                          for(let i = 0; i less buttons.length ; i++) {<br>
+                            buttons[i].addEventListener('click', createParagraph);<br>
+                          }
+                        <br>
+                    </code></div>
+                    <p>Save and refresh your browser, and you should see the same thing! It works just the same, but now we've got our JavaScript in an external file. This is generally a good thing in terms of organizing your code and making it reusable across multiple HTML files. Plus, the HTML is easier to read without huge chunks of script dumped in it.</p>
+                </article>
+            </section>
+            <section class="main-section" id="Comments">
+                <header>Comments</header>
+                <article>
+                    <p>As with HTML and CSS, it is possible to write comments into your JavaScript code that will be ignored by the browser, and exist simply to provide instructions to your fellow developers on how the code works (and you, if you come back to your code after six months and can't remember what you did). Comments are very useful, and you should use them often, particularly for larger applications. There are two types:</p>
+                    <ul>
+                        <li>A single line comment is written after a double forward slash (//), e.g.<br><code>// I am a comment</code></li>
+                        <li>A multi-line comment is written between the strings /* and */, e.g.<br><div class="code"><code>/*<br>
+                                I am also<br>
+                                a comment<br>
+                              */</code></div></li>
+                    </ul>
+                </article>
+            </section>
+            <section class="main-section" id="Summary">
+                <header>Summary</header>
+                <article>
+                    <p>So there you go, your first step into the world of JavaScript. We've begun with just theory, to start getting you used to why you'd use JavaScript and what kind of things you can do with it. Along the way, you saw a few code examples and learned how JavaScript fits in with the rest of the code on your website, amongst other things.</p>
+                    <p>JavaScript may seem a bit daunting right now, but don't worry — in this course, we will take you through it in simple steps that will make sense going forward. In the next article, we will plunge straight into the practical, getting you to jump straight in and build your own JavaScript examples.</p>
+                </article>
+            </section>
+            <section class="main-section" id="Reference">
+                <header>Reference</header>
+                <article>
+                    <p>All the documentation in this page is taken from MDN.</p>
+                </article>
+            </section>
+        </main>
+    </body>
+</html>

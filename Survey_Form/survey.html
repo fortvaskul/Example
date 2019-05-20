@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    </head>
+    <body>
+        <main>
+            <div id="top">
+                <h1 id="title">Survey Form</h1>
+                <p id="description">This is a form for volunteers who want to help us save our planet.</p>
+            </div>
+            <form id="survey-form">
+                <div class="first-part">
+                    <label id="name-label" class="labels" for="name">Name:</label>
+                    <input id="name" class="right-bar" type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="first-part">
+                    <label id="email-label" class="labels" for="email">Email:</label>
+                    <input id="email" class="right-bar" type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="first-part">
+                    <label id="number-label" class="labels" for="number">Age:</label>
+                    <input id="number" class="right-bar" type="number" placeholder="Enter your age" min="18" max="99" required>
+                </div>
+                <div class="first-part">
+                    <div class="labels">
+                        <label  for="dropdown" >Gender:</label>
+                    </div>
+                    <div class="right-bar">
+                        <select id="dropdown" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    </div>                    
+                </div>                
+                <fieldset>
+                    <legend>Have you been a volunteer before?</legend>
+                    <label for="no"><input id="no" type="radio" name="volunteer" value="one" checked> No</label> 
+                    <label for="yes-y"><input id="yes-y" type="radio" name="volunteer" value="two"> Yes, in your company</label>
+                    <label for="yes-a"><input id="yes-a" type="radio" name="volunteer" value="three"> Yes, in another company</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Your free time a week:</legend>                    
+                    <label for="hours"><input id="hours" type="radio" name="time" value="one" checked> Several hours</label> 
+                    <label for="less3"><input id="less3" type="radio" name="time" value="two"> Less than 3 days</label>
+                    <label for="more3"><input id="more3" type="radio" name="time" value="three"> More than 3 days</label>
+                </fieldset>
+                <fieldset>
+                    <legend>In which country do you want to work?</legend>
+                    <label for="ukr"><input id="ukr" type="checkbox" name="country" value="Ukraine"> Ukraine</label>
+                    <label for="canad"><input id="canad" type="checkbox" name="country" value="Canada"> Canada</label>
+                    <label for="any"><input id="any" type="checkbox" name="country" value="Any"> It does not matter</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Do you agree with our <a href="#">rules</a>?</legend>
+                    <label for="agg"><input id="agg" type="checkbox" name="agree" value="agree" required> I agree</label>
+                </fieldset>
+                <textarea rows="4" cols="50" maxlength="500" placeholder="Describe yourself."></textarea>
+                <button id="submit" type="submit">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>

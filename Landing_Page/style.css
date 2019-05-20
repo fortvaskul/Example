@@ -1,0 +1,183 @@
+:root {
+    --back-page: #cfc5bc;    
+    --back-head: #082d3a;
+    --back-link: #267491;
+    --back-sect: #a7b8b5;
+    --text-page: #000205;
+}
+
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    background-color:var(--back-page, silver);
+    color: var(--text-page, black);    
+}
+header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: var(--back-head, grey);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px ;
+    color: var(--back-sect, black);
+}
+header img {
+    max-width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+#label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nav-bar {
+    height: 100%;
+}
+ul {
+    padding-inline-start: 0px;
+}
+header ul {
+    width: 50vw;
+    height: 100%;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+    list-style: none;
+}
+a {
+    color: var(--back-sect, black);
+    text-decoration: none;
+    font-size: 1.2em;
+}
+header li:hover {
+    background:	var(--back-link, silver);
+    
+}
+a:hover {
+    color: var(--back-head, black);
+}
+a:active {
+    color: var(--back-sect, black);  
+}
+main{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;    
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+main > section {
+    margin: 30px 0px;
+    padding: 30px;
+}
+#about, form {
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#title {
+    margin: auto 10% 40px 10%;
+}
+#offers {
+    margin: auto 10%;
+}
+.offer {
+    display: flex;    
+    align-items: center;
+    margin: 10px;
+}
+.offer img {
+    margin: 10px;
+}
+.offer h3, .offer p {
+    margin: 0;
+}
+.offer-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+form div {
+    margin: 5px;
+}
+input {
+    border-width: 0px;
+    border-radius: 5px;    
+    padding: 10px;
+}
+#submit {
+    background: var(--back-head);
+    color: var(--back-page);
+    font-size: 0.9em;
+    font-weight: 600;
+}
+#invitation, #price {
+    background-color: var(--back-sect);
+}
+#prices {
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+}
+.money {
+    background-color: white;
+    margin: auto 10px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.level {
+    background-color: var(--back-link);
+    height: 100%;
+    width: 100%;
+}
+button{
+    background-color: var(--back-head);
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-width: 0px;
+    color: var(--back-page);
+    font-size: 1.1em;
+    font-weight: 600;
+}
+.money ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    li {
+        padding: 5px;
+    }
+    #prices {
+        flex-direction: column;
+    }
+    .money {
+        margin: 10px auto;
+        width: 60vw;        
+    }
+}
